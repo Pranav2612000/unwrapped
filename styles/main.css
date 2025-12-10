@@ -302,9 +302,15 @@ body {
   font-size: 1rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
+  margin-top: 1rem;
   opacity: 0.9;
   letter-spacing: 0.5px;
   color: #ffffff;
+  position: absolute;
+  top: 1rem;
+  left: 0;
+  right: 0;
+  text-align: center;
 }
 
 .story-slide .stat-value {
