@@ -1,18 +1,6 @@
 # Fitness (Un)Wrapped
 
-A privacy-focused, client-only fitness activity wrapped experience inspired by Spotify Wrapped. Upload your Garmin CSV data and visualize your fitness journey with beautiful slides.
-
-![Demo](https://img.shields.io/badge/demo-available-brightgreen) ![Privacy](https://img.shields.io/badge/privacy-100%25%20client--side-blue)
-
-## ✨ Features
-
-- 📊 **Activity Statistics**: View total distance, top activities, best months, and more
-- 🚶 **Steps Tracking**: Analyze your daily step patterns and achievements
-- 🎨 **Beautiful Slides**: Animated, shareable slides showcasing your fitness journey
-- 🔒 **100% Private**: All processing happens in your browser - no data leaves your device
-- 🎉 **Confetti Celebrations**: Fun animations to celebrate your achievements
-- ⌨️ **Keyboard Navigation**: Use arrow keys or click buttons to navigate
-- 📱 **Responsive Design**: Works on desktop and mobile devices
+Your Fitness (Garmin/Strava/StrideSync) (un)Wrappred, free from paywalls
 
 ## 🚀 Getting Started
 
@@ -75,22 +63,7 @@ This app works with Garmin CSV exports:
 - **Total Distance.csv** - Your activity distances over time
 - **Steps.csv** - Your daily step counts
 
-### How to Upload
-
-1. **Export from Garmin Connect**
-   - Log into Garmin Connect
-   - Go to Settings → My Data → Export Data
-   - Download your CSV files
-
-2. **Upload to the App**
-   - Click "Upload your files" on the homepage
-   - Select your CSV files
-   - Wait for processing
-   - Enjoy your wrapped!
-
-### Sample Data
-
-Click "Use sample data" to see the app in action with mock data.
+Follow the landing page instructions to learn how to prepare your data.
 
 ## 🎨 Customization
 
