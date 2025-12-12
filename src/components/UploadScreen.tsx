@@ -90,9 +90,14 @@ const UploadScreen: React.FC<UploadScreenProps> = ({
       console.log("[Google Sheets] Files set successfully");
     } catch (error) {
       console.error("[Google Sheets] Error details:", error);
-      console.error("[Google Sheets] Error message:", error.message);
+      console.error(
+        "[Google Sheets] Error message:",
+        error instanceof Error ? error.message : "Unknown error",
+      );
+      const errorMessage =
+        error instanceof Error ? error.message : String(error);
       alert(
-        `Failed to fetch data from Google Sheets: ${error.message}. Please check the URL and try again.`,
+        `Failed to fetch data from Google Sheets: ${errorMessage}. Please check the URL and try again.`,
       );
     }
   };

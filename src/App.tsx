@@ -156,9 +156,14 @@ function AppContent() {
       setCurrentScreen("wrapped");
     } catch (error) {
       console.error("[App] Error processing files:", error);
-      console.error("[App] Error stack:", error.stack);
+      console.error(
+        "[App] Error stack:",
+        error instanceof Error ? error.stack : "No stack trace",
+      );
+      const errorMessage =
+        error instanceof Error ? error.message : String(error);
       alert(
-        `Failed to process files: ${error.message}. Please check your CSV files and try again.`,
+        `Failed to process files: ${errorMessage}. Please check your CSV files and try again.`,
       );
       setCurrentScreen("upload");
     }
