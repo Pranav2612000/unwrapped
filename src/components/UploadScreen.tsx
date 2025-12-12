@@ -265,7 +265,7 @@ const UploadScreen: React.FC<UploadScreenProps> = ({
               maxWidth: "500px",
             }}
           >
-            Fetch and parse
+            Fetch Data from Google Sheets
           </button>
         </div>
       </div>
