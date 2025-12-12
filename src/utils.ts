@@ -16,6 +16,8 @@ export const getActivityIcon = (type: string) => {
     hiking: "🏔️",
     hike: "🏔️",
 
+    workout: "🏋️‍♂️",
+
     default: "🏃",
   };
   return icons[type.toLowerCase()] || icons.default;
