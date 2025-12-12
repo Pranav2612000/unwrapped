@@ -84,7 +84,7 @@ const UploadScreen: React.FC<UploadScreenProps> = ({
             → Click "Request Your Archive" and wait for email
           </li>
           <li>
-            <strong>Garmin:</strong> Complete export:{" "}
+            <strong>Garmin - Complete:</strong> Account Data Management:{" "}
             <a
               href="https://www.garmin.com/en-US/account/datamanagement/exportdata"
               target="_blank"
@@ -96,9 +96,26 @@ const UploadScreen: React.FC<UploadScreenProps> = ({
             (download activities.csv)
           </li>
           <li>
-            Upload CSV files below (activities.csv or activities.csv from
-            Strava)
+            <strong>Garmin - Individual:</strong> Activity Distance + Steps:{" "}
+            <a
+              href="https://connect.garmin.com/modern/report/17/all/last_year"
+              target="_blank"
+              rel="noopener"
+              style={{ color: "#4d65ff", textDecoration: "underline" }}
+            >
+              Activity Distance
+            </a>{" "}
+            +{" "}
+            <a
+              href="https://connect.garmin.com/modern/report/29/wellness/last_year"
+              target="_blank"
+              rel="noopener"
+              style={{ color: "#4d65ff", textDecoration: "underline" }}
+            >
+              Steps
+            </a>
           </li>
+          <li>Upload CSV files below (activities.csv recommended)</li>
         </ol>
 
         <div style={{ marginTop: "1.5rem", marginBottom: "1rem" }}>
