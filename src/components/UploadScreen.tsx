@@ -229,6 +229,19 @@ const UploadScreen: React.FC<UploadScreenProps> = ({
           />
         </svg>
         <span>Your data never leaves your device</span>
+        <a
+          href="https://github.com/tidefield/unwrapped"
+          target="_blank"
+          rel="noopener"
+          style={{
+            color: "#4d65ff",
+            textDecoration: "underline",
+            fontSize: "0.85rem",
+            opacity: 0.8,
+          }}
+        >
+          View source code
+        </a>
       </div>
     </div>
   );

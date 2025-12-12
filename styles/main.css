@@ -11,7 +11,7 @@ body {
     background: linear-gradient(135deg, #ffffeb 0%, #fff8e7 50%, #ffffeb 100%);
     color: #1a1a1a;
     min-height: 100vh;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 /* Celebration background elements */
