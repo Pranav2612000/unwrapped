@@ -24,6 +24,27 @@ function AppContent() {
   const [loadingText, setLoadingText] = useState("Loading sample data...");
   const [sampleFiles, setSampleFiles] = useState<File[]>([]);
 
+  useEffect(() => {
+    try {
+      const activitiesStats = JSON.parse(
+        localStorage.getItem("activitiesStats") || "null",
+      );
+      const stepsStats = JSON.parse(
+        localStorage.getItem("stepsStats") || "null",
+      );
+      setActivitiesStats(activitiesStats);
+      setStepsStats(stepsStats);
+    } catch (error) {
+      console.error("Error loading stats from local storage:", error);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (activitiesStats != null || stepsStats != null) {
+      setCurrentScreen("wrapped");
+    }
+  }, [activitiesStats, stepsStats]);
+
   const loadSampleData = async () => {
     try {
       setLoadingText("Loading sample data...");
@@ -135,20 +156,24 @@ function AppContent() {
 
       if (allActivityData.length > 0) {
         console.log("[App] Calculating activities stats");
-        setActivitiesStats(calculateAllActivitiesStats(allActivityData));
+        const allActivitiesStats = calculateAllActivitiesStats(allActivityData);
+        localStorage.setItem(
+          "activitiesStats",
+          JSON.stringify(allActivitiesStats),
+        );
+        setActivitiesStats(allActivitiesStats);
       } else {
         console.log("[App] No activity data to calculate stats");
       }
 
       if (allStepsData.length > 0) {
         console.log("[App] Calculating steps stats");
-        setStepsStats(calculateStepsStats(allStepsData));
+        const allStepsStats = calculateStepsStats(allStepsData);
+        localStorage.setItem("stepsStats", JSON.stringify(allStepsStats));
+        setStepsStats(allStepsStats);
       } else {
         console.log("[App] No steps data to calculate stats");
       }
-
-      console.log("[App] Switching to wrapped screen");
-      setCurrentScreen("wrapped");
     } catch (error) {
       console.error("[App] Error processing files:", error);
       console.error(

@@ -59,12 +59,24 @@ const WrappedScreen: React.FC<WrappedScreenProps> = ({
   const nextSlide = () => {
     if (currentSlideIndex < totalSlides - 1) {
       setCurrentSlideIndex(currentSlideIndex + 1);
+    } else if (currentSlideIndex === totalSlides - 1) {
+      clearDataAndRestart();
     }
+  };
+
+  // Clear the local storage and reload the page to
+  // reset the user to the intro page
+  const clearDataAndRestart = () => {
+    localStorage.removeItem("activitiesStats");
+    localStorage.removeItem("stepsStats");
+    window.location.reload();
   };
 
   const prevSlide = () => {
     if (currentSlideIndex > 0) {
       setCurrentSlideIndex(currentSlideIndex - 1);
+    } else if (currentSlideIndex === 0) {
+      clearDataAndRestart();
     }
   };
 
@@ -209,20 +221,12 @@ const WrappedScreen: React.FC<WrappedScreenProps> = ({
         >
           Showing distances in {unit === "mile" ? "miles" : "kilometers"}
         </div>
-        <button
-          className="nav-btn"
-          onClick={prevSlide}
-          disabled={currentSlideIndex === 0}
-        >
-          ←
+        <button className="nav-btn" onClick={prevSlide}>
+          {currentSlideIndex === 0 ? "⟲" : "←"}
         </button>
         {renderProgressDots()}
-        <button
-          className="nav-btn"
-          onClick={nextSlide}
-          disabled={currentSlideIndex === totalSlides - 1}
-        >
-          →
+        <button className="nav-btn" onClick={nextSlide}>
+          {currentSlideIndex === totalSlides - 1 ? "⟲" : "→"}
         </button>
       </div>
     </div>
