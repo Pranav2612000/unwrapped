@@ -24,11 +24,6 @@ function AppContent() {
   const [loadingText, setLoadingText] = useState("Loading sample data...");
   const [sampleFiles, setSampleFiles] = useState<File[]>([]);
 
-  // Load sample data on mount
-  useEffect(() => {
-    loadSampleData();
-  }, []);
-
   const loadSampleData = async () => {
     try {
       setLoadingText("Loading sample data...");
@@ -177,6 +172,7 @@ function AppContent() {
             onFilesUploaded={handleFilesUploaded}
             sampleFiles={sampleFiles}
             onUseSampleData={processSampleData}
+            loadSampleData={loadSampleData}
           />
         );
       case "loading":
