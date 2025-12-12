@@ -1,10 +1,21 @@
 export const getActivityIcon = (type: string) => {
   const icons: Record<string, string> = {
     running: "🏃‍➡️",
+    run: "🏃‍➡️",
+
     cycling: "🚴",
+    cycle: "🚴",
+    ride: "🚴",
+
     swimming: "🏊",
+    swim: "🏊",
+
     walking: "🚶‍♀️‍➡️",
+    walk: "🚶‍♀️‍➡️",
+
     hiking: "🏔️",
+    hike: "🏔️",
+
     default: "🏃",
   };
   return icons[type.toLowerCase()] || icons.default;
