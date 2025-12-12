@@ -163,7 +163,7 @@ body {
     backdrop-filter: blur(10px);
     border: 3px dashed rgba(26, 26, 26, 0.3);
     border-radius: 20px;
-    padding: 4rem 2rem;
+    padding: 1rem 2rem;
     cursor: pointer;
     transition: all 0.3s ease;
 }
@@ -197,12 +197,15 @@ body {
 }
 
 .file-list {
-    margin-top: 2rem;
+    margin-top: 1rem;
     text-align: left;
     background: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(10px);
     border-radius: 12px;
-    padding: 1.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
     max-height: 200px;
     overflow-y: auto;
     border: 1px solid rgba(26, 26, 26, 0.1);
@@ -224,8 +227,8 @@ body {
 }
 
 .btn-primary {
-    margin-top: 2rem;
-    padding: 1rem 3rem;
+    margin-top: 1rem;
+    padding: 1rem 1rem;
     font-size: 1.1rem;
     font-weight: 600;
     background: #4d65ff;
@@ -246,7 +249,7 @@ body {
 }
 
 .privacy-note {
-    margin-top: 2rem;
+    margin-top: 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
