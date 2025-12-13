@@ -27,18 +27,8 @@ function AppContent() {
   const [sampleFiles, setSampleFiles] = useState<File[]>([]);
 
   useEffect(() => {
-    try {
-      const activitiesStats = JSON.parse(
-        localStorage.getItem("activitiesStats") || "null",
-      );
-      const stepsStats = JSON.parse(
-        localStorage.getItem("stepsStats") || "null",
-      );
-      setActivitiesStats(activitiesStats);
-      setStepsStats(stepsStats);
-    } catch (error) {
-      console.error("Error loading stats from local storage:", error);
-    }
+    localStorage.removeItem("activitiesStats");
+    localStorage.removeItem("stepsStats");
   }, []);
 
   useEffect(() => {
@@ -101,11 +91,13 @@ function AppContent() {
       const stepsData = await parseGarminStepsCSV(stepsFile);
 
       setLoadingText("Calculating your stats...");
-      localStorage.setItem("activitiesStats", JSON.stringify(activityData));
-      setActivitiesStats(calculateAllActivitiesStats(activityData));
+      const activitiesStats = calculateAllActivitiesStats(activityData);
+      localStorage.setItem("activitiesStats", JSON.stringify(activitiesStats));
+      setActivitiesStats(activitiesStats);
 
+      const stepsStats = calculateStepsStats(stepsData);
       localStorage.setItem("stepsStats", JSON.stringify(stepsStats));
-      setStepsStats(calculateStepsStats(stepsData));
+      setStepsStats(stepsStats);
 
       setCurrentScreen("wrapped");
     } catch (error) {
