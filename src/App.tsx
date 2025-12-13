@@ -101,7 +101,10 @@ function AppContent() {
       const stepsData = await parseGarminStepsCSV(stepsFile);
 
       setLoadingText("Calculating your stats...");
+      localStorage.setItem("activitiesStats", JSON.stringify(activityData));
       setActivitiesStats(calculateAllActivitiesStats(activityData));
+
+      localStorage.setItem("stepsStats", JSON.stringify(stepsStats));
       setStepsStats(calculateStepsStats(stepsData));
 
       setCurrentScreen("wrapped");
